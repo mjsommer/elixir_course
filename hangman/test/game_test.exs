@@ -31,4 +31,11 @@ defmodule GameTest do
     assert game.game_state == :already_used
   end
 
+  test "a good guess is recognized" do
+    game = Game.new_game("wibble")
+    {game, _tally} = Game.make_move(game, "W")
+    assert game.game_state == :good_guess
+    assert game.turns_left == 7
+  end
+
 end
