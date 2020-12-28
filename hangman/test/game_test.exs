@@ -33,7 +33,7 @@ defmodule GameTest do
 
   test "a good guess is recognized" do
     game = Game.new_game("wibble")
-    {game, _tally} = Game.make_move(game, "W")
+    {game, _tally} = Game.make_move(game, "w")
     assert game.game_state == :good_guess
     assert game.turns_left == 7
   end
